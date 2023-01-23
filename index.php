@@ -12,7 +12,10 @@ function autoload(string $trida): void
 }
 spl_autoload_register("autoload");
 
+Db::pripoj('127.0.0.1', 'root', '', 'db_pojistovna');
+
 $smerovac = new SmerovacKontroler();
 $smerovac->zpracuj(array($_SERVER['REQUEST_URI']));
 
 $smerovac->vypisPohled();
+

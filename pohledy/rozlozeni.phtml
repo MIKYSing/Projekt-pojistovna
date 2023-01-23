@@ -3,9 +3,9 @@
     <head>
         <base href="/localhost" />
         <meta charset="UTF-8" />
-        <title><?= $titulek ?></title>
-        <meta name="description" content="<?= $popis ?>" />
-        <meta name="keywords" content="<?= $klicova_slova ?>" />
+        <title>WEB</title>
+        <meta name="description" content="web" />
+        <meta name="keywords" content="web" />
         <link rel="stylesheet" href="style.css" type="text/css"/>
     </head>
 
@@ -16,20 +16,21 @@
 
         <nav>
             <ul>
-                <li><a href="clanek/uvod">Úvod</a></li>
-                <li><a href="clanek">Články</a></li>
+                <li><a href="stranka">Hlavní stránka</a></li>
+                <li><a href="pojistenci">Pojištěnci</a></li>
                 <li><a href="kontakt">Kontakt</a></li>
+                <li><a href="prihlaseni">Přihlásit</a></li>
+                <li><a href="registrace">Zaregistrovat</a></li>
             </ul>
         </nav>
         <br clear="both" />
 
         <article>
-
+            <?php $this->kontroler->vypisPohled(); ?>
         </article>
 
         <footer>
-            <p>Ukázkový tutoriál pro jednoduché MVC z programátorské sociální sítě
-            
-        </footer>
+        Vytvořil &copy;Michael Eret jako finální projekt ke zkoušce pro <a href="https://itnetwork.cz">itnetwork.cz</a>
+    </footer>
     </body>
 </html>

@@ -25,10 +25,11 @@ class SmerovacKontroler extends Kontroler
     public function zpracuj(array $parametry): void
     {
         $naparsovanaURL = $this->parsujURL($parametry[0]);
-
+        // pokud není zadán žádný kontroler(první parametr je prazdny nebo uplně chybí), tak přesměruj na 
         if(empty($naparsovanaURL[0]))
         {
-            $this->presmeruj('clanek/uvod');  
+            $this->presmeruj('stranka');  
+            
         }
         $tridaKontroleru = $this->pomlckyDOVelbloudiNotace(array_shift($naparsovanaURL)) . 'Kontroler';
         

@@ -10,3 +10,4 @@ class ChybaKontroler extends Kontroler
         $this->pohled = 'chyba';
     }
 }
+*/

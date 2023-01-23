@@ -45,3 +45,45 @@ nav a:hover {
     color: #EEEEEE;
     text-decoration: none;
 }
+.tabulka {
+    width: 100%;
+    color: #444444;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid #C9CBCD;
+}
+
+.tabulka.align-left {
+    text-align: left;
+}
+
+.tabulka th, .tabulka td {
+    padding:5px;
+    border-collapse: collapse;
+    border: 1px solid #C9CBCD;
+}
+
+.tabulka td {
+    word-break: break-word;
+}
+
+.tabulka.no-break td {
+    word-break: normal;
+}
+
+.tabulka th {
+    color: black;
+    background: #f5f5f5;
+}
+
+.tabulka tr:nth-child(2n) {
+    background-color: #F6F6F6;
+}
+.tabulka-detail {
+    width: 100%;
+    color: #444444;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid #C9CBCD;
+}
+

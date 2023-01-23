@@ -1,0 +1,24 @@
+<h1>Seznam Pojištěných osob</h1>
+<table class="tabulka">
+
+<tr>
+        <th>Jmeno</th>
+        <th>Přijmení</th>
+        <th>bydliště</th>
+        <th>Město</th>
+		<th>PSČ</th>
+		
+    </tr>
+    <?php foreach ($pojistenci as $pojistnik) : ?>
+
+        <tr>
+            <td><a href="pojistenci/<?= $pojistnik['id_pojistence'] ?>"><?= $pojistnik['jmeno'] ?></a></td>
+            <td><?=$pojistnik['prijmeni'] ?></td>
+            <td><?=$pojistnik['ulice'] ?></td>
+            <td><?=$pojistnik['mesto'] ?></td>
+			<td><?=$pojistnik['psc'] ?></td>
+			
+        </tr>
+
+    <?php endforeach ?>
+</table>
