@@ -24,4 +24,25 @@ abstract class Kontroler
         exit;
     }
     abstract function zpracuj(array $parametry) : void;
+
+    public function pridejZpravu(string $zprava): void
+    {
+        if(isset($_SESSION['zpravy']))
+        {
+            $_SESSION['zpravy'][] = $zprava;
+        }else{
+            $_SESSION['zpravy'] = array($zprava);
+        }
+    }
+    public function vratZpravy(): array
+    {
+        if(isset($_SESSION['zpravy']))
+        {
+            $zpravy = $_SESSION['zpravy'];
+            unset($_SESSION['zpravy']);
+            return $zpravy;
+        }else{
+            return array();
+        }
+    }
 }

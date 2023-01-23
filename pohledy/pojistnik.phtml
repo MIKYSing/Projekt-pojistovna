@@ -1,18 +1,18 @@
 <header>
-    <h1><?= $jmeno ?> <?= $prijmeni ?></h1>
+    <h1><?= htmlspecialchars($jmeno) ?> <?= htmlspecialchars($prijmeni) ?></h1>
 </header>
 <section>
     <table class="tabulka">
     <tr>
-    <td><?= $ulice ?></td>
-    <td><?= $email?></td>
+    <td><?= htmlspecialchars($ulice) ?></td>
+    <td><?= htmlspecialchars($email) ?></td>
     </tr>
     <tr>
-    <td><?= $mesto ?></td>
-    <td><?= $telefon ?></td>
+    <td><?= htmlspecialchars($mesto) ?></td>
+    <td><?= htmlspecialchars($telefon) ?></td>
     </tr>
     <tr>
-    <td><?= $psc ?></td>
+    <td><?= htmlspecialchars($psc) ?></td>
     </tr>
 </table>
 </section>

@@ -18,4 +18,14 @@ class SpravcePojistencu
     ORDER BY jmeno DESC
     ');
   }
+  public function ulozPojistnika(int $id_pojistence, array $pojistence): void
+  {
+    if (!$id_pojistence)
+    {
+     Db::vloz('pojistence', $pojistence);
+    }else{
+      Db::zmen('pojistence', $pojistence, 'WHERE id_pojistence = ?', array($id_pojistence));
+    }
+  }
+  
 }

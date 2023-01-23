@@ -2,21 +2,20 @@
 <table class="tabulka">
 
 <tr>
-        <th>Jmeno</th>
-        <th>Přijmení</th>
+        <th>Jmeno Přijmení</th>
         <th>bydliště</th>
-        <th>Město</th>
-		<th>PSČ</th>
+        <th>Akce</th>
+		
 		
     </tr>
     <?php foreach ($pojistenci as $pojistnik) : ?>
 
         <tr>
-            <td><a href="pojistenci/<?= $pojistnik['id_pojistence'] ?>"><?= $pojistnik['jmeno'] ?></a></td>
-            <td><?=$pojistnik['prijmeni'] ?></td>
-            <td><?=$pojistnik['ulice'] ?></td>
-            <td><?=$pojistnik['mesto'] ?></td>
-			<td><?=$pojistnik['psc'] ?></td>
+            <td><a href="pojistenci/<?= htmlspecialchars($pojistnik['id_pojistence']) ?>"><?= htmlspecialchars($pojistnik['jmeno']) . ' ' . htmlspecialchars($pojistnik['prijmeni']) ?></a></td>
+          
+            <td><?=htmlspecialchars($pojistnik['ulice']) . ', ' . htmlspecialchars($pojistnik['mesto']) . ', ' . htmlspecialchars($pojistnik['psc']) ?></td>
+            <td><a href="editor">Editovat</a> <a href="Smazat">Smazat</a></td>
+			
 			
         </tr>
 

@@ -47,6 +47,7 @@ class SmerovacKontroler extends Kontroler
 
 
         $this->pohled = 'rozlozeni';
+        $this->data['zpravy'] = $this->vratZpravy();
     }
 
     

@@ -86,4 +86,9 @@ nav a:hover {
     border-collapse: collapse;
     border: 1px solid #C9CBCD;
 }
+.zprava {
+    border: 1px solid #9DC2F8;
+    background: #DBE8F8;
+    padding: 3px;
+}
 
