@@ -1,4 +1,6 @@
 <?php
+
+
 class ChybaKontroler extends Kontroler
 {
     public function zpracuj(array $parametry): void
@@ -10,4 +12,3 @@ class ChybaKontroler extends Kontroler
         $this->pohled = 'chyba';
     }
 }
-*/

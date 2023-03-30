@@ -1,0 +1,18 @@
+<form method="post">
+    <input class="form-control" type="hidden" name="id_pojisteni" value="<?= $pojisteni['id_pojisteni'] ?>"/>
+
+    <input class="form-control" type="hidden" name="id_pojistnika" value="<?= $pojisteni['id_pojistnika'] ?>" /><br />
+    Název<br />
+    <input class="form-control" type="text" name="nazev" value="<?= $pojisteni['nazev'] ?>" /><br />
+    Částka<br />
+    <input class="form-control" type="int" name="castka" value="<?= $pojisteni['castka'] ?>" /><br />
+    Předmět<br />
+    <input class="form-control" type="text" name="predmet" value="<?= $pojisteni['predmet'] ?>" /><br />
+    Platnost Od<br />
+    <input class="form-control" type="date" name="platnost_od" value="<?= $pojisteni['platnost_od'] ?>" /><br />
+    Platnost Do<br />
+    <input class="form-control" type="date" name="platnost_do" value="<?= $pojisteni['platnost_do'] ?>" /><br />
+
+    <input type="submit" value="Upravit"/>
+</form>
+

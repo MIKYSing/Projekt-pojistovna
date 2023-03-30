@@ -1,0 +1,19 @@
+<h1>Zde mužete vložit nové Pojištění k uživateli</h1>
+
+<form method="post">
+    <input class="form-control" type="hidden" name="id_pojisteni" value="<?= $pojisteni['id_pojisteni'] ?>"/>
+    <input class="form-control" type="hidden" name="id_pojistnika" value="<?= $pojisteni['id_pojistnika'] ?>"/><br />
+    Název pojištění<br />
+    <input class="form-control type="text" placeholder="např. Pojištění odpovědnosti" name="nazev" value="<?= $pojisteni['nazev'] ?>" autofocus  required/><br />
+    Pojistná částka <br />
+    <input class="form-control type="int" placeholder="např. 50000" name="castka" value="<?= $pojisteni['castka'] ?>" required /><br />
+    Předmět pojištění<br />
+    <input class="form-control type="text" placeholder="např. domácnost,byt,auto,zahrada" name="predmet" value="<?= $pojisteni['predmet'] ?>" required /><br />
+    Platnost OD<br />
+    <input type="date" name="platnost_od" value="<?= $pojisteni['platnost_od'] ?>" /><br />
+    platnost DO<br />
+    <input  type="date" name="platnost_do" value="<?= $pojisteni['platnost_do'] ?>" /><br />
+    <input type="submit" value="Uložit"/>
+
+</form>
+

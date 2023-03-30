@@ -1,17 +1,11 @@
 <?php
 
 
-/**
- *
- */
-class EditorKontroler extends Kontroler
+class VlozitKontroler extends Kontroler
 {
-    /**
-     * @param array $parametry
-     * @return void
-     */
     public function zpracuj(array $parametry): void
     {
+        $this->overUzivatele(true);
         $spravcePojistencu = new SpravcePojistencu();
 
         $pojistnik = array(
@@ -27,21 +21,20 @@ class EditorKontroler extends Kontroler
 
         if ($_POST) {
             $klice = array('jmeno', 'prijmeni', 'email', 'telefon', 'ulice', 'mesto', 'psc');
+
             $pojistnik = array_intersect_key($_POST, array_flip($klice));
 
             $spravcePojistencu->ulozPojistnika($_POST['id_pojistence'], $pojistnik);
-            $this->pridejZpravu('Úpravy byly úspěšně uloženy.');
-            $this->presmeruj('pojistenci/' . $pojistnik['id']);
-        } else if (!empty($parametry[0])) {
-            $nactenyPojistnik = $spravcePojistencu->detailPojistnik($parametry[0]);
-            if ($nactenyPojistnik) {
-                $pojistnik = $nactenyPojistnik;
-            } else {
-                $this->pridejZpravu('Pojistník nebyl nalezen.');
-            }
+
+            $this->pridejZpravu('Nový pojistník byl úspěšně uložen.');
+            $this->presmeruj('pojistenci/' . $pojistnik['id_pojistence']);
+
         }
+
+
         $this->data['pojistnik'] = $pojistnik;
-        $this->pohled = 'editor';
+        $this->pohled = 'vlozit';
+
 
     }
 }

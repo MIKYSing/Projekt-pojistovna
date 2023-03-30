@@ -1,0 +1,38 @@
+<h1>Seznam pojištění, které nabízíme</h1>
+
+
+<?php if($admin) : ?>
+<a href="vlozitpoj"><button type="button" class="btn btn-secondary btn-lg btn-block">Nové pojištění</button></a>
+<?php endif ?>
+<table class="table table-hover">
+
+    <tr class="table-info">
+        <th>Název pojištění</th>
+        <th>Částka</th>
+        <th>Předmět pojistění</th>
+        <th>Od - Do</th>
+        <?php if($admin) : ?>
+        <th>Akce</th>
+        <?php endif ?>
+    </tr>
+
+        <?php foreach ($pojisteni as $pojistka) : ?>
+
+    <tr>
+
+        <td><a href="pojisteni/<?= htmlspecialchars($pojistka['id_pojisteni']) ?>"><?= htmlspecialchars($pojistka['nazev']) ?></a></td>
+
+        <td><?= htmlspecialchars($pojistka['castka']). ' Kč' ?></td>
+        <td><?= htmlspecialchars($pojistka['predmet']) ?></td>
+        <td><?= htmlspecialchars(date('d.m.Y', strtotime($pojistka['platnost_od']))) . ' - ' . htmlspecialchars(date('d.m.Y', strtotime($pojistka['platnost_do']))) ?></td>
+        <?php if($admin) : ?>
+        <td><button type="button" class="btn btn-outline-secondary"><a href="editorpoj/<?= $pojistka['id_pojisteni'] ?>">Editovat</a></button>
+            <button type="button" class="btn btn-outline-secondary"><a href="pojisteni/<?= $pojistka['id_pojisteni'] ?>/odstranit">Odstranit</a></button>
+
+        </td>
+        <?php endif ?>
+    </tr>
+
+    <?php endforeach ?>
+</table>
+

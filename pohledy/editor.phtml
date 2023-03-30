@@ -1,7 +1,19 @@
-<h1>Editor Pojistníků</h1>
-
 <form method="post">
-    <input type="hidden" name="id_pojistnika" value="<?= $pojistnik['id_pojistence'] ?>" />
-    Jmeno<br />
-    <input type="text" name="jmeno" value="<?= $pojistnik['jmeno'] ?>" />
-</form>    
+    <input class="form-control" type="hidden" name="id_pojistence" value="<?= $pojistnik['id_pojistence'] ?>"/>
+    <label class="col-sm-2 col-form-label">Jméno</label>
+    <input class="form-control" type="text" name="jmeno" value="<?= $pojistnik['jmeno'] ?>" /><br />
+    Přijmení<br />
+    <input class="form-control" type="text" name="prijmeni" value="<?= $pojistnik['prijmeni'] ?>" /><br />
+    Email<br />
+    <input class="form-control" type="text" name="email" value="<?= $pojistnik['email'] ?>" /><br />
+    Telefon<br />
+    <input class="form-control" type="int" name="telefon" value="<?= $pojistnik['telefon'] ?>" /><br />
+    Ulice<br />
+    <input class="form-control" type="string" name="ulice" value="<?= $pojistnik['ulice'] ?>" /><br />
+    Město<br />
+    <input class="form-control" type="string" name="mesto" value="<?= $pojistnik['mesto'] ?>" /><br />
+    PSČ<br />
+    <input class="form-control" type="string" name="psc" value="<?= $pojistnik['psc'] ?>" /><br />
+    <input type="submit" value="Upravit"/>
+</form>
+

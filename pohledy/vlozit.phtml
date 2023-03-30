@@ -1,0 +1,21 @@
+<h1>Zde mužete vložit nového Pojistníka</h1>
+
+<form method="post">
+    <input class="form-control" type="hidden" name="id_pojistence" value="<?= $pojistnik['id_pojistence'] ?>"/>
+    Jméno<br />
+    <input class="form-control" type="text" name="jmeno" value="<?= $pojistnik['jmeno'] ?>" autofocus required/><br />
+    Přijmení<br />
+    <input class="form-control" type="text" name="prijmeni" value="<?= $pojistnik['prijmeni'] ?>" required /><br />
+    Email<br />
+    <input class="form-control" type="text" name="email" value="<?= $pojistnik['email'] ?>" required/><br />
+    Telefon<br />
+    <input class="form-control" type="int" name="telefon" value="<?= $pojistnik['telefon'] ?>" required/><br />
+    Ulice<br />
+    <input class="form-control" type="string" name="ulice" value="<?= $pojistnik['ulice'] ?>" required/><br />
+    Město<br />
+    <input class="form-control" type="string" name="mesto" value="<?= $pojistnik['mesto'] ?>" required/><br />
+    PSČ<br />
+    <input class="form-control" type="string" name="psc" value="<?= $pojistnik['psc'] ?>" required /><br />
+    <input class="form-control" type="submit" value="Uložit"/>
+</form>
+

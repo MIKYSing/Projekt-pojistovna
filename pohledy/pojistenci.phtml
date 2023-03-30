@@ -1,22 +1,38 @@
 <h1>Seznam Pojištěných osob</h1>
-<table class="tabulka">
+<?php
+if ($admin) : ?>
+    <a href="vlozit">
+        <button type="button" class="btn btn-secondary btn-lg btn-block">Vložit nového pojistníka</button>
+    </a>
+<?php endif ?>
+<table class="table table-hover">
 
-<tr>
+    <tr class="table-info">
         <th>Jmeno Přijmení</th>
-        <th>bydliště</th>
-        <th>Akce</th>
-		
-		
+        <th>Bydliště</th>
+        <?php if ($admin) : ?>
+            <th>Akce</th>
+        <?php endif ?>
+
+
     </tr>
     <?php foreach ($pojistenci as $pojistnik) : ?>
 
         <tr>
-            <td><a href="pojistenci/<?= htmlspecialchars($pojistnik['id_pojistence']) ?>"><?= htmlspecialchars($pojistnik['jmeno']) . ' ' . htmlspecialchars($pojistnik['prijmeni']) ?></a></td>
-          
-            <td><?=htmlspecialchars($pojistnik['ulice']) . ', ' . htmlspecialchars($pojistnik['mesto']) . ', ' . htmlspecialchars($pojistnik['psc']) ?></td>
-            <td><a href="editor">Editovat</a> <a href="Smazat">Smazat</a></td>
-			
-			
+            <td>
+                <a href="pojistenci/<?= htmlspecialchars($pojistnik['id_pojistence']) ?>"><?= htmlspecialchars($pojistnik['jmeno']) . ' ' . htmlspecialchars($pojistnik['prijmeni']) ?></a>
+            </td>
+
+            <td><?= htmlspecialchars($pojistnik['ulice']) . ', ' . htmlspecialchars($pojistnik['mesto']) . ', ' . htmlspecialchars($pojistnik['psc']) ?></td>
+            <?php if ($admin) : ?>
+                <td>
+                    <button type="button" class="btn btn-outline-secondary"><a
+                                href="pojistenci/<?= $pojistnik['id_pojistence'] ?>/odstranit">Odstranit</a></button>
+                    <button type="button" class="btn btn-outline-secondary"><a
+                                href="editor/<?= $pojistnik['id_pojistence'] ?>">Editovat</a></button>
+                </td>
+            <?php endif ?>
+
         </tr>
 
     <?php endforeach ?>

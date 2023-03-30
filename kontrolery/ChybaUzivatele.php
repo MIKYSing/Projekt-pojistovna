@@ -1,5 +1,6 @@
 <?php
-class ChybaUzivatele extends Exception
+
+class ChybaUzivatele extends \kontrolery\Exception
 {
-    
+
 }

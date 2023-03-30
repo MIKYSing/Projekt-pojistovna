@@ -2,17 +2,56 @@
     <h1><?= htmlspecialchars($jmeno) ?> <?= htmlspecialchars($prijmeni) ?></h1>
 </header>
 <section>
-    <table class="tabulka">
-    <tr>
-    <td><?= htmlspecialchars($ulice) ?></td>
-    <td><?= htmlspecialchars($email) ?></td>
-    </tr>
-    <tr>
-    <td><?= htmlspecialchars($mesto) ?></td>
-    <td><?= htmlspecialchars($telefon) ?></td>
-    </tr>
-    <tr>
-    <td><?= htmlspecialchars($psc) ?></td>
-    </tr>
-</table>
+    <table class="table">
+        <tr>
+            <td><?= htmlspecialchars($ulice) ?></td>
+            <td><?= htmlspecialchars($email) ?></td>
+        </tr>
+        <tr>
+            <td><?= htmlspecialchars($mesto) ?></td>
+            <td><?= htmlspecialchars($telefon) ?></td>
+        </tr>
+        <tr>
+            <td><?= htmlspecialchars($psc) ?></td>
+        </tr>
+    </table>
+    <h2>Sjednaná pojištění </h2>
+    <a href="vlozitpoj/<?= htmlspecialchars($id_pojistence) ?>">
+        <button type="button" class="btn btn-secondary btn-lg btn-block">Nové pojištění</button>
+    </a>
+    <table class="table">
+        <tr>
+            <th>Pojištění</th>
+            <th>Částka</th>
+            <th>Název</th>
+            <th>Platnost OD</th>
+            <th>Platnost DO</th>
+            <?php if ($admin) : ?>
+            <th>Akce</th>
+            <?php endif ?>
+        </tr>
+        <?php foreach ($pojisteni as $VypisPojisteni) : ?>
+            <tr>
+                <td><?= htmlspecialchars($VypisPojisteni['nazev']) ?></td>
+                <td><?= htmlspecialchars($VypisPojisteni['castka']) ?> Kč</td>
+                <td><?= htmlspecialchars($VypisPojisteni['nazev']) ?></td>
+                <td><?= htmlspecialchars(date('d.m.Y', strtotime($VypisPojisteni['platnost_od']))) ?></td>
+                <td><?= htmlspecialchars(date('d.m.Y', strtotime($VypisPojisteni['platnost_do']))) ?></td>
+
+                <?php if ($admin) : ?>
+                    <td>
+                        <button type="button" class="btn btn-outline-secondary"><a
+                                    href="editorpoj/<?= $VypisPojisteni['id_pojisteni'] ?>">Editovat</a></button>
+                        <button type="button" class="btn btn-outline-secondary">
+                            <a href="pojisteni/<?=$VypisPojisteni['id_pojisteni']?>/odstranit">Odstranit</a>
+                        </button>
+
+                    </td>
+                <?php endif ?>
+            </tr>
+
+        <?php endforeach ?>
+
+    </table>
+
 </section>

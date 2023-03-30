@@ -52,6 +52,12 @@ class Db {
 		$navrat->execute($parametry);
 		return $navrat->fetch();
 	}
+    public static function dotazVice(string $dotaz, array $parametry = array()) : array|bool
+    {
+        $navrat = self::$spojeni->prepare($dotaz);
+        $navrat->execute($parametry);
+        return $navrat->fetchAll();
+    }
 
     /**
      * Spustí dotaz a vrátí všechny jeho řádky
